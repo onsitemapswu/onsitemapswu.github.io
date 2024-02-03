@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <title>Onsite Map</title>
+
+    <style>
+        #my_map {
+            height: 800px;
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Onsite Locations 2024</h1>
+    <p>LACA Onsite Map</p>
+
+    <div id="my_map"></div>
+    <script>
+        var map=L.map("my_map").setView([9.95453,-84.19010], 10);
+        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png?", {}).addTo(map)
+        
+         L.marker([9.9529,-84.2025]).addTo(map).bindPopup("WU Office Santa Ana, CR").openPopup()
+         L.marker([19.4588,-99.0493]).addTo(map).bindPopup("WU Office Mexico City, MX").openPopup()
+         L.marker([25.6536,-100.2914]).addTo(map).bindPopup("WU Office Monterrey, MX").openPopup()
+         L.marker([8.8282,-79.2719]).addTo(map).bindPopup("WU Office Panama City, PA").openPopup()
+         L.marker([-11.5506,-76.8658]).addTo(map).bindPopup("WU Office Peru, PE").openPopup()
+         L.marker([-23.609,-47.131]).addTo(map).bindPopup("WU Office Brazil, BR").openPopup()
+         L.marker([-33.212,-57.085]).addTo(map).bindPopup("WU Office Argentina, AR").openPopup()
+         L.marker([12.8441,-58.7247]).addTo(map).bindPopup("WU Office Barbados, BA").openPopup()
+    </script>
+
+    
+</body>
+</html>
